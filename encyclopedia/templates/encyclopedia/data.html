@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    wiki
+{% endblock %}
+
+{% block body %}
+<div id="alert">{{ message }}</div>
+    <h1>{{ title|safe }}</h1>
+    {{ id|safe }}
+ 	{% if not message %}
+    <a href="{% url 'tasks:edit' %}">edit</a>
+    {% endif %}
+    
+{% endblock %}

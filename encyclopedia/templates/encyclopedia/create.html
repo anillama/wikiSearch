@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create 
+{% endblock %}
+
+{% block body %}
+    <h1>Create New Page</h1>
+    <div id="alert">{{ message }}</div>
+    <form action="{% url 'tasks:create' %}" method="post">
+    	{% csrf_token %}
+    	{{ form.as_p }}
+    	<input type="submit" value="Create">
+    </form>
+
+{% endblock %}
